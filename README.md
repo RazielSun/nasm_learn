@@ -14,11 +14,15 @@ https://sonictk.github.io/asm_tutorial/
 ### ubuntu
 linux asm code for ubuntu (use virtualbox + ubuntu 20.04, vim)
 
-sudo apt install nasm git binutils
+`sudo apt install nasm git binutils`
 
-nasm -f elf64 hello.asm
+```nasm -f elf64 hello.asm
 ld -s -o hello.out hello.o
-./hello.out
+./hello.out```
+
+or
+
+`nasm -felf64 hello.asm && ld hello.o && ./a.out`
 
 ### win
 my test nasm win code
@@ -28,16 +32,16 @@ set "PATH=%LocalAppData%\bin\NASM;%PATH%" & %comspec% /k "%DEV_DIR%\Microsoft\Vi
 
 ## Win usage
 ### In NASM window
-nasm -f win64 -o hello_world.obj hello_world.asm
+`nasm -f win64 -o hello_world.obj hello_world.asm`
 
 ### In Native VS Code Prompt (x86 or x64)
-link 00_hello_world.obj /subsystem:console /entry:main /out:00_hello_world_basic.exe kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib
+`link 00_hello_world.obj /subsystem:console /entry:main /out:00_hello_world_basic.exe kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib`
 
 ### WORK FOR ME x64
-link 00_hello_world.obj /subsystem:console /out:00_hello_world_basic.exe kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib
+`link 00_hello_world.obj /subsystem:console /out:00_hello_world_basic.exe kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib`
 
-link 00_hello_win32.obj /subsystem:console kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib
+`link 00_hello_win32.obj /subsystem:console kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib`
 
-link 01_hello.obj /subsystem:console /entry:start kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib
+`link 01_hello.obj /subsystem:console /entry:start kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib`
 
-link 01_hello.obj /subsystem:console kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib
+`link 01_hello.obj /subsystem:console kernel32.lib legacy_stdio_definitions.lib msvcrt.lib libucrt.lib`
