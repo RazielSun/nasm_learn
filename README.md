@@ -16,9 +16,11 @@ linux asm code for ubuntu (use virtualbox + ubuntu 20.04, vim)
 
 `sudo apt install nasm git binutils`
 
-```nasm -f elf64 hello.asm
+```
+nasm -f elf64 hello.asm
 ld -s -o hello.out hello.o
-./hello.out```
+./hello.out
+```
 
 or
 
@@ -28,7 +30,7 @@ or
 my test nasm win code
 
 **my special bat with nasm and ld
-set "PATH=%LocalAppData%\bin\NASM;%PATH%" & %comspec% /k "%DEV_DIR%\Microsoft\VisualStudio\Community\2022\VC\Auxiliary\Build\vcvarsamd64_x86.bat"
+`set "PATH=%LocalAppData%\bin\NASM;%PATH%" & %comspec% /k "%DEV_DIR%\Microsoft\VisualStudio\Community\2022\VC\Auxiliary\Build\vcvarsamd64_x86.bat"`
 
 ## Win usage
 ### In NASM window
