@@ -15,17 +15,33 @@ _start:
     mov edi, buf
     xor ecx, ecx
     cld
-lp: ; copy from msg1 to buf
+.lp: ; copy from msg1 to buf
     mov al, [msg1 + ecx]
     stosb
     inc ecx
     cmp ecx, 16
-    jl lp
+    jl .lp
+	
+	std
+	mov edi, buf+15+5
+	mov esi, buf+15
+	mov ecx, 6
+	rep movsb ; rep as repetition, we copy string to end
 
-    mov eax, 4
+	xor ecx, ecx
+	mov edi, buf+10
+	cld
+.lp2:
+	mov al, [msg2+ecx]
+	stosb
+	inc ecx
+	cmp ecx, 5
+	jl .lp2
+		
+	mov eax, 4
 	mov ebx, 1
 	mov ecx, buf
-	mov edx, 16
+	mov edx, 21
 	int 80h
 
     mov eax, 1
