@@ -2,7 +2,8 @@
 global _start
 
 section .text
-_start:	mov eax, 4 ; syscall write cmd
+_start:
+	mov eax, 4 ; syscall write cmd
 	mov ebx, 1
 	mov ecx, message
 	mov edx, 13
