@@ -19,14 +19,14 @@ _start:
     int 80h
 
 strlen:
-    push ebx
+    push rbx ; ebx but in 64 mode
     mov ebx, eax
-.nextchar
+.nextchar:
     cmp byte[eax], 0
     jz .finished
     inc eax
     jmp .nextchar
-.finished
+.finished:
     sub eax, ebx
-    pop ebx
+    pop rbx ; same
     ret
