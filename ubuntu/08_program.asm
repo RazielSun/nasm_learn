@@ -1,9 +1,8 @@
 global _start
 
 section .data
-message: db "", 0
-pattern: db "", 0
-; star: db "*", 0
+message: db "message", 0
+pattern: db "*", 0
 
 section .bss
 
